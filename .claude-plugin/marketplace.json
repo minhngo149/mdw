@@ -11,7 +11,7 @@
     {
       "name": "mdw",
       "source": "./",
-      "description": "Reconstruct how a feature, endpoint, job, event, or business flow actually works from source code, with CONFIRMED / INFERRED / UNKNOWN evidence, as .md and .html artifacts.",
+      "description": "Turn source code into reusable engineering knowledge: distributed flow across services and stores, function-level execution sequence, and repository security review, with CONFIRMED / INFERRED / UNKNOWN evidence, as .md and .html artifacts.",
       "category": "development"
     }
   ]

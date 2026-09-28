@@ -1,7 +1,7 @@
 {
   "name": "mdw",
-  "description": "MDW (Minh Daily Works): engineering skills that turn source code into reusable Markdown and HTML knowledge. Includes distributed-flow.",
-  "version": "0.1.0",
+  "description": "MDW (Minh Daily Works): engineering skills that turn source code into reusable Markdown and HTML knowledge. Includes distributed-flow, sequence-flow, and security.",
+  "version": "0.2.0",
   "author": {
     "name": "minhnn"
   },
@@ -14,6 +14,13 @@
     "flow",
     "architecture",
     "documentation",
-    "onboarding"
+    "onboarding",
+    "sequence-flow",
+    "call-chain",
+    "execution-trace",
+    "security",
+    "code-review",
+    "authorization",
+    "vulnerability-analysis"
   ]
 }
