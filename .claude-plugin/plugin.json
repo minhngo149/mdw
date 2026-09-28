@@ -1,0 +1,19 @@
+{
+  "name": "mdw",
+  "description": "MDW (Minh Daily Works): engineering skills that turn source code into reusable Markdown and HTML knowledge. Includes distributed-flow.",
+  "version": "0.1.0",
+  "author": {
+    "name": "minhnn"
+  },
+  "homepage": "https://github.com/minhngo149/mdw",
+  "repository": "https://github.com/minhngo149/mdw",
+  "license": "MIT",
+  "keywords": [
+    "distributed-systems",
+    "code-analysis",
+    "flow",
+    "architecture",
+    "documentation",
+    "onboarding"
+  ]
+}

@@ -43,17 +43,24 @@ format. Flows are drawn as plain text in Markdown and with HTML/CSS in HTML.
 
 ## Install
 
-Claude Code loads skills from `~/.claude/skills/<name>/` (personal, all projects) or
-`<project>/.claude/skills/<name>/` (one project).
+**As a Claude Code plugin** (recommended). This repository is its own plugin marketplace:
+
+```bash
+claude plugin marketplace add minhngo149/mdw
+claude plugin install mdw@mdw
+```
+
+Or inside Claude Code: `/plugin marketplace add minhngo149/mdw`, then `/plugin install mdw@mdw`.
+Restart Claude Code afterwards. The skill is then available as `mdw:distributed-flow`.
+
+**As a plain skill.** Claude Code also loads skills from `~/.claude/skills/<name>/` (all
+projects) or `<project>/.claude/skills/<name>/` (one project):
 
 ```bash
 git clone https://github.com/minhngo149/mdw.git ~/mdw
 mkdir -p ~/.claude/skills
 ln -s ~/mdw/skills/distributed-flow ~/.claude/skills/distributed-flow
 ```
-
-To use it in a single project, copy `skills/distributed-flow` into that project's
-`.claude/skills/` instead.
 
 ## Use
 
@@ -76,6 +83,9 @@ or business operation works. Artifacts are written to `mdw/distributed-flow/<flo
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
+├── .claude-plugin/
+│   ├── marketplace.json                lets `claude plugin marketplace add` find the plugin
+│   └── plugin.json                     plugin manifest (name, version, license)
 └── skills/
     └── distributed-flow/
         ├── SKILL.md                    workflow, evidence rules, output contract

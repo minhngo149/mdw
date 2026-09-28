@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "mdw",
+  "owner": {
+    "name": "minhnn"
+  },
+  "metadata": {
+    "description": "MDW (Minh Daily Works): engineering skills that turn source code into reusable Markdown and HTML knowledge."
+  },
+  "plugins": [
+    {
+      "name": "mdw",
+      "source": "./",
+      "description": "Reconstruct how a feature, endpoint, job, event, or business flow actually works from source code, with CONFIRMED / INFERRED / UNKNOWN evidence, as .md and .html artifacts.",
+      "category": "development"
+    }
+  ]
+}
