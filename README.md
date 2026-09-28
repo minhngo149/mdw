@@ -13,7 +13,7 @@ Source code  ->  Engineering knowledge  ->  Reusable text artifacts (.md, .html)
 
 | Skill | Use it to |
 |---|---|
-| [`distributed-flow`](skills/distributed-flow/SKILL.md) | Reconstruct how one feature, endpoint, job, event, or business flow really executes: entry point, sync and async hops, service boundaries, persistence, transactions, state changes, and failure paths. Every claim is labeled `CONFIRMED`, `INFERRED`, or `UNKNOWN` and backed by file and symbol evidence. |
+| [`distributed-flow`](skills/distributed-flow/SKILL.md) | Show what actually happens when one request, job, event, or business operation runs: the flow of nodes (API, services, workers, databases, caches, brokers, external APIs) and connections (protocol, sync or async), traced from source code, with the trade-offs and failure points visible in that flow. Anything the repository cannot confirm is `UNKNOWN`. |
 | [`sequence-flow`](skills/sequence-flow/SKILL.md) | Reconstruct the actual execution sequence of one operation at function level: entry point, call chain, branches, loops, error paths, goroutines and other async boundaries, transactions, and the return path, in the order the code runs them. Uses the same evidence labels. |
 | [`security`](skills/security/SKILL.md) | Review a repository for security risks supported by its code, config, schema, and infrastructure: authentication, authorization (IDOR/BOLA, privilege escalation, tenant isolation), injection (SQL, command, SSRF, path traversal), file uploads, sessions and tokens, secrets, cryptography, data exposure, dependencies, configuration, and business-logic and race-condition flaws. Every finding carries evidence, a safe verification, and a `CONFIRMED` / `INFERRED` / `UNKNOWN` label; secrets are redacted and CVEs are never invented. |
 
@@ -74,9 +74,6 @@ ln -s ~/mdw/skills/distributed-flow ~/.claude/skills/distributed-flow
 ln -s ~/mdw/skills/sequence-flow ~/.claude/skills/sequence-flow
 ```
 
-`sequence-flow` points to some `distributed-flow` references for cross-process depth, so install
-both.
-
 ## Use
 
 Open Claude Code in the repository you want to analyze and ask about one flow:
@@ -98,7 +95,7 @@ another location:
 
 | Skill | Artifacts |
 |---|---|
-| `distributed-flow` | `mdw/distributed-flow/<flow>.md`, `mdw/distributed-flow/<flow>.html` |
+| `distributed-flow` | `mdw/distributed-flow/<scope>-distributed-flow.md`, `mdw/distributed-flow/<scope>-distributed-flow.html` |
 | `sequence-flow` | `mdw/sequence-flow/<operation>-sequence.md`, `mdw/sequence-flow/<operation>-sequence.html` |
 
 ## Layout
@@ -113,15 +110,7 @@ another location:
 │   └── plugin.json                     plugin manifest (name, version, license)
 └── skills/
     ├── distributed-flow/               "Where does the system communicate?"
-    │   ├── SKILL.md                    workflow, evidence rules, output contract
-    │   └── references/                 loaded on demand, one topic each
-    │       ├── repository-analysis.md
-    │       ├── service-boundary.md
-    │       ├── sync-flow.md
-    │       ├── async-flow.md
-    │       ├── failure-flow.md
-    │       ├── transaction-flow.md
-    │       └── text-flow-format.md
+    │   └── SKILL.md                    goal, tracing method, flow format, output contract
     └── sequence-flow/                  "What executes, in what order?"
         ├── SKILL.md                    workflow, evidence rules, output contract
         └── references/                 loaded on demand, one topic each
